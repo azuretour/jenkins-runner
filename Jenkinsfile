@@ -28,7 +28,7 @@ spec:
     }
   }
   stages {
-    stage('Docker Build') {
+    stage('Kaniko Build and Push') {
       steps {
         sh '/kaniko/executor --dockerfile=${PWD}/Dockerfile -c ${PWD} --cache=true --destination=jenkinsacr9482.azurecr.io/jenkins-demo:v1.0.0'
       }
