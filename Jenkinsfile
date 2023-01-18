@@ -52,7 +52,8 @@ spec:
     }
   }
       steps {
-        sh 'kubectl apply -f home/jenkins/agent/workspace/jenkins-on-aks_master/pod.yaml'
+        sh 'sleep 10000'
+        sh 'kubectl apply -f /home/jenkins/agent/workspace/jenkins-on-aks_master/pod.yaml'
       }
     }
   }
