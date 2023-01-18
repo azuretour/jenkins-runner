@@ -30,8 +30,7 @@ spec:
   stages {
     stage('Docker Build') {
       steps {
-        sh 'printenv'
-        sh '/kaniko/executor --dockerfile=/home/jenkins/agent/workspace/aks-test_jenkins-on-aks/Dockerfile -c /home/jenkins/agent/workspace/aks-test_jenkins-on-aks --cache=true --destination=jenkinsacr9482.azurecr.io/jenkins-demo:v1.0.0'
+        sh '/kaniko/executor --dockerfile=${PWD}/Dockerfile -c ${PWD} --cache=true --destination=jenkinsacr9482.azurecr.io/jenkins-demo:v1.0.0'
       }
     }
     stage('Deploy Application') {
@@ -63,7 +62,7 @@ spec:
     }
   }
       steps {
-        sh 'kubectl apply -f pod.yaml'
+        sh 'kubectl apply -f ${PWD}/pod.yaml'
       }
     }
   }
