@@ -42,22 +42,12 @@ spec:
   spec:
     containers:
     - name: kubectl
-      image: bitnami/kubectl:latest
+      image: quay.io/tfgco/kubectl
       imagePullPolicy: Always
       command:
       - sleep
       args:
       - 99d
-      envFrom:
-        - secretRef:
-            name: acr-sp
-      volumeMounts:
-        - name: docker-config
-          mountPath: /kaniko/.docker/
-    volumes:
-      - name: docker-config
-        configMap:
-          name: docker-config
 '''
     }
   }
