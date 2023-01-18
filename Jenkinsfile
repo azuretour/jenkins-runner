@@ -36,12 +36,12 @@ spec:
     stage('Deploy Application') {
       agent {
     kubernetes {
-      defaultContainer 'azcli'
+      defaultContainer 'kubectl'
       yaml '''
   kind: Pod
   spec:
     containers:
-    - name: azcli
+    - name: kubectl
       image: bitnami/kubectl:latest
       imagePullPolicy: Always
       command:
@@ -62,6 +62,7 @@ spec:
     }
   }
       steps {
+        sh 'sleep 100000'
         sh 'kubectl apply -f ${PWD}/pod.yaml'
       }
     }
