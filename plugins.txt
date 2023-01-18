@@ -1,0 +1,10 @@
+kubernetes:1.31.3
+workflow-job:1189.va_d37a_e9e4eda_
+workflow-aggregator:581.v0c46fa_697ffd
+git:5.0.0
+git-client:4.0.0
+github-branch-source:1696.v3a_7603564d04
+configuration-as-code:1569.vb_72405b_80249
+kubernetes-credentials-provider:0.22
+job-dsl:1.81
+credentials:1214.v1de940103927

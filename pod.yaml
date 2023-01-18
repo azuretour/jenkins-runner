@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jenkins-demo-pod
+  namespace: default
+  labels:
+    azure.workload.identity/use: "true"
+spec:
+  containers:
+    - image: jenkinsacr9482.azurecr.io/jenkins-demo:v1.0.0'
+      name: jenkins-demo-container
+  nodeSelector:
+    kubernetes.io/os: linux
